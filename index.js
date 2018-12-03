@@ -1,14 +1,29 @@
-//if, else
-//if, else if, else
-//&&, ||
-const age = prompt("How old are you?");
+const title = document.querySelector("#title");
 
-if(age >= 18 && age <= 21){
-    console.log("You can drink. but, you should not");
-} else if(age > 21){
-    console.log("You can drink");
-} else{
-    console.log("You can't drink")
+const BASE_COLOR = "rgb(52, 73, 94)";//"#34495e";
+const OTHER_COLOR = "rgba(51, 110, 123, 1)";
+
+function handleClick(){
+    const currentColor = title.style.color;
+    if(currentColor == BASE_COLOR){
+        title.style.color = OTHER_COLOR;
+    }else{
+        title.style.color = BASE_COLOR;
+    }
 }
 
-console.log(age);
+function init(){
+    title.style.color = BASE_COLOR;
+    title.addEventListener("click", handleClick);
+}
+init();
+
+function handleOffline(){
+    console.log("I'm off");
+}
+function handleOnline(){
+    console.log("Welcome back!");
+}
+
+window.addEventListener("offline", handleOffline);
+window.addEventListener("online", handleOnline);
