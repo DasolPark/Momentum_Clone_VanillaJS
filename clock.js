@@ -10,11 +10,11 @@ function getTime(){
     clockTitle.innerText = `${
         hours < 10 ? `0${hours}`: hours}:${
         minutes < 10 ? `0${minutes}` : minutes}:${
-        seconds < 10 ? `${seconds}` : seconds}`;
+        seconds < 10 ? `0${seconds}` : seconds}`;
 }
 
 function init(){
-    getTime();
+    getTime();//첫 시간값을 띄워주려면 반드시 호출
     setInterval(getTime, 1000);
 }
 
