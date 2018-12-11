@@ -5,6 +5,8 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 const TODOS_LS = "toDos";
 
 let toDos = [];
+let lastNumber = 0;
+let flag = false;
 
 function deleteToDo(event) {
   const btn = event.target;
@@ -25,7 +27,12 @@ function paintToDo(text) {
   const li = document.createElement("li");
   const delBtn = document.createElement("button");
   const span = document.createElement("span");
-  const newId = toDos.length + 1;
+  let newId;
+  if (flag === false) {
+    newId = toDos.length + 1;
+  } else {
+    newId = ++lastNumber;
+  }
   delBtn.innerText = "DEL";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
@@ -52,10 +59,12 @@ function loadToDos() {
   const loadedToDos = localStorage.getItem(TODOS_LS);
   if (loadedToDos !== null) {
     const parsedToDos = JSON.parse(loadedToDos);
+    lastNumber = parsedToDos.length;
     parsedToDos.forEach(function(toDo) {
       paintToDo(toDo.text);
     });
   }
+  flag = true;
 }
 
 function init() {
