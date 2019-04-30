@@ -1,3 +1,5 @@
 # Vanilla-JS
 
-Site: https://dasolpark.github.io/Momentum_Clone_VanillaJS/
+A clone of the productivity chrome app Momentum on Vanilla JavaScript
+
+Site: https://dasolpark.github.io/Momentum_Clone_VanillaJS-Nico-/
