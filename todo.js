@@ -33,7 +33,7 @@ function paintToDo(text) {
   } else {
     newId = ++lastNumber;
   }
-  delBtn.innerText = "DEL";
+  delBtn.innerText = "❌";
   delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
