@@ -1,6 +1,14 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 200px;
+}
+
 .form,
 .greetings {
   display: none;
+  text-align: center;
 }
 
 .showing {
@@ -29,6 +37,12 @@
 
 .js-clock h1 {
   color: white;
+  text-align: center;
+}
+
+.js-toDoForm {
+  border: none;
+  text-align: center;
 }
 
 .js-toDoList {
